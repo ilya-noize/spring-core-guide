@@ -3,7 +3,7 @@ package noize.dev.spring_core_guide.practice.scope;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App {
-    public static final int COUNT = 10;
+    public static final int COUNT = 4;
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context =
