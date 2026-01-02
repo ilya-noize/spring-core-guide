@@ -1,6 +1,7 @@
 package noize.dev.spring_core_guide.practice.di;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,6 +13,7 @@ public class GreetingPrinterSetter {
     }
 
     @Autowired
+    @Qualifier("friendly-greeting")
     public void setGreetingService(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
