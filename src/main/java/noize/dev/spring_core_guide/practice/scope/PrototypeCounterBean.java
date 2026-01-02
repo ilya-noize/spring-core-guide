@@ -1,7 +1,7 @@
 package noize.dev.spring_core_guide.practice.scope;
 
 public class PrototypeCounterBean implements CounterBean{
-    private int count = 0;
+    private int count;
 
     public PrototypeCounterBean() {
         this.count = 0;
