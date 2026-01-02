@@ -46,3 +46,4 @@ build/
 /logs/*
 /.env
 /src/main/resources/dev.application.yml
+/.gigaide/

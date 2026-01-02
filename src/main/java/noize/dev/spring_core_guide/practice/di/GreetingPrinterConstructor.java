@@ -1,8 +1,10 @@
 package noize.dev.spring_core_guide.practice.di;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
+@Primary
 @Component
 public class GreetingPrinterConstructor {
     private final GreetingService greetingService;
