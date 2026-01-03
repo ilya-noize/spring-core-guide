@@ -1,5 +1,6 @@
 package noize.dev.spring_core_guide.guide.context;
 
+import noize.dev.spring_core_guide.guide.context.aop.Loggable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,18 @@ public class TaskManager {
         this.task = task;
     }
 
-    public void printTask() {
+    @Loggable(
+            value = "ERROR",
+            times = 5
+    )
+    public int printTaskError() {
         System.out.println("Current task: " + task);
+        throw new RuntimeException("Exception in TaskManager");
+    }
+
+    @Loggable
+    public int printTaskInfo() {
+        System.out.println("Current task: " + task);
+        return task.duration();
     }
 }
