@@ -11,7 +11,7 @@ public class TaskApplication {
         );
         workTasks(context);
 
-        workTaskProperties(context);
+//        workTaskProperties(context);
     }
 
     private static void workTaskProperties(AnnotationConfigApplicationContext context) {
@@ -25,7 +25,8 @@ public class TaskApplication {
         Task task = context.getBean(Task.class);
         System.out.println("task = " + task);
         TaskManager taskManager = (TaskManager) context.getBean("taskManager");
-        taskManager.printTask();
+        taskManager.printTaskInfo();
+        taskManager.printTaskError();
     }
 }
 
