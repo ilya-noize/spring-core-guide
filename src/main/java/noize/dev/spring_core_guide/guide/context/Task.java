@@ -1,22 +1,26 @@
 package noize.dev.spring_core_guide.guide.context;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component("main-task")
+@Component
 public class Task {
     private final String name;
-    private final Long duration;
+    private final Integer duration;
 
-    public Task() {
-        this.name = "task";
-        this.duration = 60L;
+    public Task(
+            @Value("${task.name}") String name,
+            @Value("${task.duration}") Integer duration
+    ) {
+        this.name = name;
+        this.duration = duration;
     }
 
     public String name() {
         return name;
     }
 
-    public Long duration() {
+    public Integer duration() {
         return duration;
     }
 
